@@ -1,9 +1,12 @@
+import Header from "@/sections/Header";
 import React from "react";
 
 const HomePage = () => {
   return (
     <div>
-      <h1>HomePage</h1>
+      <div className="bg-[#030013]">
+        <Header />
+      </div>
     </div>
   );
 };
