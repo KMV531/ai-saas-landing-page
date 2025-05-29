@@ -12,7 +12,7 @@ const AboutSection = () => {
         data-aos="fade-up"
         data-aos-delay="100"
       >
-        <h1 className="text-center text-white font-extralight text-3xl md:text-5xl lg:text-7xl">
+        <h1 className="text-center text-white font-extralight text-3xl md:text-5xl lg:text-7xl py-4">
           Create Eye-catching site & page and landing pages in minutes with{" "}
           <span className="font-extrabold">AI</span>
         </h1>

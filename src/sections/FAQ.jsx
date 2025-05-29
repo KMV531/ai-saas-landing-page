@@ -9,7 +9,7 @@ import {
 const FAQSection = () => {
   return (
     <section
-      className="container mx-auto px-5 lg:px-0 pt-20 relative bg-cover bg-center bg-fixed bg-no-repeat bg-[url('/assets/bgCoverImage.png')]"
+      className="container mx-auto px-5 lg:px-0 py-20 relative bg-cover bg-center bg-fixed bg-no-repeat bg-[url('/assets/bgCoverImage.png')]"
       data-aos="fade-up"
       data-aos-duration="800"
       data-aos-delay="100"
@@ -29,7 +29,7 @@ const FAQSection = () => {
       <Accordion
         type="single"
         collapsible
-        className="max-w-5xl mx-auto text-white p-20"
+        className="max-w-6xl mx-auto text-white p-20"
       >
         {[
           {

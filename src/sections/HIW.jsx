@@ -21,7 +21,7 @@ const HIWSection = () => {
           </p>
           <button
             className="rounded-full font-semibold bg-[#0D9488] text-white text-sm md:text-lg lg:text-xl p-3 cursor-pointer"
-            data-aos="zoom-in"
+            data-aos="fade-up"
             data-aos-delay="200"
           >
             Start a project ✨ →
@@ -29,19 +29,19 @@ const HIWSection = () => {
         </div>
 
         {/* Central Image */}
-        <div className="relative" data-aos="zoom-in-up" data-aos-delay="100">
+        <div className="relative" data-aos="fade-up" data-aos-delay="300">
           <Image
-            src={"/assets/about_image.png"}
+            src="/assets/about_image.png"
             alt="Image Showing How Our SAAS Functions"
             width={928}
             height={551}
-            className="mx-auto"
+            className="mx-auto object-cover"
           />
         </div>
 
         {/* Decorative Background Blur */}
         <Image
-          src={"/assets/bgDiv [absolute].png"}
+          src="/assets/bgDiv [absolute].png"
           alt="blur background"
           width={100}
           height={128}
@@ -52,12 +52,12 @@ const HIWSection = () => {
         <div
           className="flex flex-col items-center justify-center space-y-5 lg:flex-row lg:space-x-5"
           data-aos="fade-up"
-          data-aos-delay="300"
+          data-aos-delay="400"
         >
           {/* Left Image */}
-          <div data-aos="fade-right" data-aos-delay="400">
+          <div data-aos="fade-up" data-aos-delay="500">
             <Image
-              src={"/assets/Div [absolute] (3).png"}
+              src="/assets/Div [absolute] (3).png"
               alt="Our SAAS Landing Page Screenshots"
               width={658.5}
               height={400}
@@ -67,14 +67,14 @@ const HIWSection = () => {
           {/* Right Text Block */}
           <div
             className="flex flex-col space-y-4 items-start justify-center relative"
-            data-aos="fade-left"
-            data-aos-delay="500"
+            data-aos="fade-up"
+            data-aos-delay="600"
           >
             <h1 className="max-w-[389px] font-black text-2xl md:text-3xl lg:text-5xl">
               Build site Like a Pro with AI
             </h1>
             <p className="text-lg bg-gradient-to-r from-[#2563EB] to-[#9333EA] bg-clip-text text-transparent">
-              -No coding skill needed
+              - No coding skill needed
             </p>
             <p className="text-xl py-3 max-w-[400px]">
               Create a stunning site/page without any design or coding skills.
@@ -88,7 +88,7 @@ const HIWSection = () => {
 
       {/* Bottom Decorative Blur */}
       <Image
-        src={"/assets/bgDiv [absolute].png"}
+        src="/assets/bgDiv [absolute].png"
         alt="blur background"
         width={100}
         height={128}

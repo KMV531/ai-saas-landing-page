@@ -4,24 +4,14 @@ import React from "react";
 
 const Footer = () => {
   return (
-    <footer
-      className="pt-20"
-      data-aos="fade-up"
-      data-aos-duration="900"
-      data-aos-delay="100"
-    >
+    <footer className="pt-20">
       <hr />
       <section className="container mx-auto">
         {/* Inner wrapper with padding to reduce outer height */}
         <div className="p-16 lg:p-20">
           <div className="flex flex-col space-y-8 lg:flex-row lg:items-start lg:justify-between lg:space-x-4 my-5">
             {/* Left Block */}
-            <div
-              className="flex flex-col space-y-5"
-              data-aos="fade-up"
-              data-aos-delay="150"
-              data-aos-duration="800"
-            >
+            <div className="flex flex-col space-y-5">
               <Link href={"/"}>
                 <Image
                   src={"/assets/logo.png"}
@@ -77,13 +67,7 @@ const Footer = () => {
                 },
               },
             ].map(({ title, items, extraItem }, i) => (
-              <div
-                key={title}
-                className="flex flex-col space-y-3"
-                data-aos="fade-up"
-                data-aos-delay={200 + i * 100} // Reduced delay gap for smoother effect
-                data-aos-duration="800"
-              >
+              <div key={title} className="flex flex-col space-y-3">
                 <h1 className="text-white font-semibold text-xl">{title}</h1>
                 {items.map((item) => (
                   <p
@@ -102,12 +86,7 @@ const Footer = () => {
 
           <hr className="py-5" />
 
-          <div
-            className="flex flex-col space-y-4 lg:flex-row lg:items-center lg:justify-between"
-            data-aos="fade-left"
-            data-aos-delay="100"
-            data-aos-duration="900"
-          >
+          <div className="flex flex-col space-y-4 lg:flex-row lg:items-center lg:justify-between">
             <div className="flex items-center justify-center space-x-4">
               <p className="text-[#9CA3AF] text-lg">
                 © {new Date().getFullYear()} Webdone. All rights reserved.
