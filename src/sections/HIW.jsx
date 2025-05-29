@@ -1,3 +1,5 @@
+"use client";
+
 import Image from "next/image";
 import React from "react";
 
@@ -5,7 +7,11 @@ const HIWSection = () => {
   return (
     <main>
       <section className="container mx-auto px-5 lg:px-0 py-10">
-        <div className="flex flex-col space-y-5 items-start justify-start p-20 ">
+        {/* Top Text Block */}
+        <div
+          className="flex flex-col space-y-5 items-start justify-start p-20"
+          data-aos="fade-up"
+        >
           <h1 className="text-[#171717] font-semibold text-2xl md:text-3xl lg:text-5xl max-w-[500px]">
             ✨ Make Landing Pages Modern, Fast, and High-Performance
           </h1>
@@ -13,11 +19,17 @@ const HIWSection = () => {
             Easily build landing pages that fit your product. Use AI assistant
             to generate layout, and change backgrounds in minutes
           </p>
-          <button className="rounded-full font-semibold bg-[#0D9488] text-white text-sm md:text-lg lg:text-xl p-3 cursor-pointer">
+          <button
+            className="rounded-full font-semibold bg-[#0D9488] text-white text-sm md:text-lg lg:text-xl p-3 cursor-pointer"
+            data-aos="zoom-in"
+            data-aos-delay="200"
+          >
             Start a project ✨ →
           </button>
         </div>
-        <div className="relative">
+
+        {/* Central Image */}
+        <div className="relative" data-aos="zoom-in-up" data-aos-delay="100">
           <Image
             src={"/assets/about_image.png"}
             alt="Image Showing How Our SAAS Functions"
@@ -26,7 +38,8 @@ const HIWSection = () => {
             className="mx-auto"
           />
         </div>
-        {/* blur bottom bg */}
+
+        {/* Decorative Background Blur */}
         <Image
           src={"/assets/bgDiv [absolute].png"}
           alt="blur background"
@@ -35,9 +48,14 @@ const HIWSection = () => {
           className="w-full"
         />
 
-        <div className="flex flex-col items-center justify-center space-y-5 lg:flex-row lg:space-x-5">
-          {/* Left */}
-          <div>
+        {/* Split Section */}
+        <div
+          className="flex flex-col items-center justify-center space-y-5 lg:flex-row lg:space-x-5"
+          data-aos="fade-up"
+          data-aos-delay="300"
+        >
+          {/* Left Image */}
+          <div data-aos="fade-right" data-aos-delay="400">
             <Image
               src={"/assets/Div [absolute] (3).png"}
               alt="Our SAAS Landing Page Screenshots"
@@ -46,8 +64,12 @@ const HIWSection = () => {
             />
           </div>
 
-          {/* right */}
-          <div className="flex flex-col space-y-4 items-start justify-center relative">
+          {/* Right Text Block */}
+          <div
+            className="flex flex-col space-y-4 items-start justify-center relative"
+            data-aos="fade-left"
+            data-aos-delay="500"
+          >
             <h1 className="max-w-[389px] font-black text-2xl md:text-3xl lg:text-5xl">
               Build site Like a Pro with AI
             </h1>
@@ -63,7 +85,8 @@ const HIWSection = () => {
           </div>
         </div>
       </section>
-      {/* blur bottom bg */}
+
+      {/* Bottom Decorative Blur */}
       <Image
         src={"/assets/bgDiv [absolute].png"}
         alt="blur background"

@@ -10,10 +10,6 @@ const Card = ({ className, children, ...other }) => {
       )}
       {...other}
     >
-      <div
-        className="absolute inset-0 -z-10 opacity-5"
-        style={{ backgroundImage: `url('/assets/grain.jpg')` }}
-      ></div>
       {children}
     </div>
   );

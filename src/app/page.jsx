@@ -1,6 +1,7 @@
 import AboutSection from "@/sections/About";
 import CTASection from "@/sections/CTA";
 import FAQSection from "@/sections/FAQ";
+import Footer from "@/sections/Footer";
 import Header from "@/sections/Header";
 import HeroSection from "@/sections/Hero";
 import HIWSection from "@/sections/HIW";
@@ -31,9 +32,12 @@ const HomePage = () => {
       <div className="bg-[linear-gradient(to_right,_#000000_0%,_#09090B_50%,_#000000_100%)]">
         <ReviewsSection />
       </div>
-      <div className="bg-[linear-gradient(to_bottom,_#111827_0%,_#000000_100%)]">
+      <div className="bg-[linear-gradient(to_bottom,_#111827_0%,_#000000_40%)]">
         <PricingSection />
         <FAQSection />
+      </div>
+      <div className="bg-[#0A0A0A]">
+        <Footer />
       </div>
     </div>
   );

@@ -91,7 +91,12 @@ const PricingSection = () => {
 
   return (
     <section className="container mx-auto px-5 lg:px-0 pt-20">
-      <div className="text-center">
+      <div
+        className="text-center"
+        data-aos="fade-down"
+        data-aos-duration="800"
+        data-aos-delay="100"
+      >
         <h1 className="bg-gradient-to-r from-white to-[#9CA3AF] bg-clip-text text-transparent font-bold text-3xl md:text-5xl lg:text-7xl">
           Simple, Transparent Pricing
         </h1>
@@ -106,7 +111,12 @@ const PricingSection = () => {
           onValueChange={(value) => setBilling(value)}
           className="w-full"
         >
-          <TabsList className="mx-auto mb-10 bg-[#161E2C] p-2 rounded-full">
+          <TabsList
+            className="mx-auto bg-[#161E2C] p-2 rounded-full"
+            data-aos="fade-up"
+            data-aos-duration="800"
+            data-aos-delay="200"
+          >
             <TabsTrigger
               value="yearly"
               className={`p-4 px-5 rounded-full transition-colors cursor-pointer ${
@@ -129,9 +139,22 @@ const PricingSection = () => {
             </TabsTrigger>
           </TabsList>
 
+          <div
+            className="py-8 mx-auto"
+            data-aos="zoom-in-up"
+            data-aos-delay="400"
+          >
+            <Image
+              src={"/assets/banner.png"}
+              alt="discount banner"
+              width={768}
+              height={102}
+            />
+          </div>
+
           <TabsContent value={billing}>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-              {["starter", "pro"].map((plan) => (
+              {["starter", "pro"].map((plan, index) => (
                 <div
                   key={plan}
                   className={`bg-gradient-to-b from-[#1F2937] to-[#111827] p-6 rounded-xl text-[#D1D5DB] flex flex-col justify-between ${
@@ -139,6 +162,9 @@ const PricingSection = () => {
                       ? "border-2 border-[#2563EB] shadow shadow-[#2563EB]"
                       : ""
                   }`}
+                  data-aos="fade-up"
+                  data-aos-delay={300 + index * 150}
+                  data-aos-duration="700"
                 >
                   <div>
                     <h3 className="text-xl font-bold capitalize">
@@ -158,13 +184,12 @@ const PricingSection = () => {
                     <ul className="mt-4 text-sm space-y-2 text-gray-300">
                       {pricingData[billing][plan].features.map((feature) => (
                         <li key={feature} className="flex gap-4">
-                          {" "}
                           <Image
                             src={"/assets/checkIcon.png"}
                             alt="checkIcon"
                             width={16}
                             height={16}
-                          />{" "}
+                          />
                           {feature}
                         </li>
                       ))}
@@ -181,7 +206,12 @@ const PricingSection = () => {
               ))}
 
               {/* One-time plan card */}
-              <div className="bg-gradient-to-b from-[#1F2937] to-[#111827] p-6 rounded-xl text-[#D1D5DB] border border-white/10 flex flex-col justify-between">
+              <div
+                className="bg-gradient-to-b from-[#1F2937] to-[#111827] p-6 rounded-xl text-[#D1D5DB] border border-white/10 flex flex-col justify-between"
+                data-aos="zoom-in"
+                data-aos-delay={600}
+                data-aos-duration="700"
+              >
                 <div>
                   <h3 className="text-xl font-bold">
                     Nextjs Framework + Starter
@@ -200,13 +230,12 @@ const PricingSection = () => {
                   <ul className="mt-4 text-sm space-y-2 text-gray-300">
                     {pricingData.oneTime.nextjs.features.map((feature) => (
                       <li key={feature} className="flex gap-4">
-                        {" "}
                         <Image
                           src={"/assets/checkIcon.png"}
                           alt="checkIcon"
                           width={16}
                           height={16}
-                        />{" "}
+                        />
                         {feature}
                       </li>
                     ))}
