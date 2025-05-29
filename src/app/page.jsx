@@ -1,3 +1,6 @@
+"use client";
+
+import Loader from "@/components/Loader";
 import AboutSection from "@/sections/About";
 import CTASection from "@/sections/CTA";
 import FAQSection from "@/sections/FAQ";
@@ -9,9 +12,22 @@ import PricingSection from "@/sections/Pricing";
 import { ProjectsSection } from "@/sections/Projects";
 import ReviewsSection from "@/sections/Reviews";
 import TutoSection from "@/sections/Tuto";
-import React from "react";
+import React, { useEffect, useState } from "react";
 
 const HomePage = () => {
+  const [isLoading, setIsLoading] = useState(true);
+
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setIsLoading(false);
+    }, 2500);
+
+    return () => clearTimeout(timer);
+  }, []);
+
+  if (isLoading) {
+    return <Loader />;
+  }
   return (
     <div>
       <div className="bg-[#030013]">
