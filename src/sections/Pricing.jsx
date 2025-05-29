@@ -3,6 +3,7 @@
 import { Tabs, TabsList, TabsTrigger, TabsContent } from "@/components/ui/tabs";
 import Image from "next/image";
 import React, { useState } from "react";
+import { motion } from "framer-motion";
 
 const pricingData = {
   yearly: {
@@ -91,11 +92,11 @@ const PricingSection = () => {
 
   return (
     <section className="container mx-auto px-5 lg:px-0 pt-20">
-      <div
+      <motion.div
         className="text-center"
-        data-aos="fade-down"
-        data-aos-duration="800"
-        data-aos-delay="100"
+        initial={{ opacity: 0, y: -40 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.8 }}
       >
         <h1 className="bg-gradient-to-r from-white to-[#9CA3AF] bg-clip-text text-transparent font-bold text-3xl md:text-5xl lg:text-7xl">
           Simple, Transparent Pricing
@@ -103,7 +104,7 @@ const PricingSection = () => {
         <p className="text-[#9CA3AF] text-lg md:text-xl lg:text-2xl py-4 max-w-2xl mx-auto">
           Choose the perfect plan for your needs with simple pricing options.
         </p>
-      </div>
+      </motion.div>
 
       <div className="w-full max-w-6xl mx-auto py-16">
         <Tabs
@@ -111,38 +112,41 @@ const PricingSection = () => {
           onValueChange={(value) => setBilling(value)}
           className="w-full"
         >
-          <TabsList
-            className="mx-auto bg-[#161E2C] p-2 rounded-full"
-            data-aos="fade-up"
-            data-aos-duration="800"
-            data-aos-delay="200"
+          <motion.div
+            className="mx-auto bg-[#161E2C] p-2 rounded-full flex w-fit"
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.2, duration: 0.6 }}
           >
-            <TabsTrigger
-              value="yearly"
-              className={`p-4 px-5 rounded-full transition-colors cursor-pointer ${
-                billing === "yearly"
-                  ? "bg-[#3B82F6] text-black"
-                  : "text-[#9CA3AF]"
-              }`}
-            >
-              Yearly Save 20%
-            </TabsTrigger>
-            <TabsTrigger
-              value="monthly"
-              className={`p-4 px-5 rounded-full transition-colors cursor-pointer ${
-                billing === "monthly"
-                  ? "bg-[#3B82F6] text-black"
-                  : "text-[#9CA3AF]"
-              }`}
-            >
-              Monthly
-            </TabsTrigger>
-          </TabsList>
+            <TabsList className="flex">
+              <TabsTrigger
+                value="yearly"
+                className={`p-4 px-5 rounded-full transition-colors cursor-pointer ${
+                  billing === "yearly"
+                    ? "bg-[#3B82F6] text-black"
+                    : "text-[#9CA3AF]"
+                }`}
+              >
+                Yearly Save 20%
+              </TabsTrigger>
+              <TabsTrigger
+                value="monthly"
+                className={`p-4 px-5 rounded-full transition-colors cursor-pointer ${
+                  billing === "monthly"
+                    ? "bg-[#3B82F6] text-black"
+                    : "text-[#9CA3AF]"
+                }`}
+              >
+                Monthly
+              </TabsTrigger>
+            </TabsList>
+          </motion.div>
 
-          <div
-            className="py-8 mx-auto"
-            data-aos="zoom-in-up"
-            data-aos-delay="400"
+          <motion.div
+            className="py-8 mx-auto flex justify-center"
+            initial={{ scale: 0.9, opacity: 0 }}
+            animate={{ scale: 1, opacity: 1 }}
+            transition={{ delay: 0.4, duration: 0.6 }}
           >
             <Image
               src={"/assets/banner.png"}
@@ -150,21 +154,34 @@ const PricingSection = () => {
               width={768}
               height={102}
             />
-          </div>
+          </motion.div>
 
           <TabsContent value={billing}>
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+            <motion.div
+              className="grid grid-cols-1 md:grid-cols-3 gap-6"
+              initial="hidden"
+              animate="visible"
+              variants={{
+                visible: {
+                  transition: {
+                    staggerChildren: 0.15,
+                  },
+                },
+              }}
+            >
               {["starter", "pro"].map((plan, index) => (
-                <div
+                <motion.div
                   key={plan}
                   className={`bg-gradient-to-b from-[#1F2937] to-[#111827] p-6 rounded-xl text-[#D1D5DB] flex flex-col justify-between ${
                     plan === "pro"
                       ? "border-2 border-[#2563EB] shadow shadow-[#2563EB]"
                       : ""
                   }`}
-                  data-aos="fade-up"
-                  data-aos-delay={300 + index * 150}
-                  data-aos-duration="700"
+                  variants={{
+                    hidden: { opacity: 0, y: 40 },
+                    visible: { opacity: 1, y: 0 },
+                  }}
+                  transition={{ duration: 0.6 }}
                 >
                   <div>
                     <h3 className="text-xl font-bold capitalize">
@@ -195,22 +212,26 @@ const PricingSection = () => {
                       ))}
                     </ul>
                   </div>
-                  <button
-                    className={`mt-6 w-full py-2 px-4 rounded-lg text-white font-medium hover:bg-blue-600 cursor-pointer ${
-                      plan === "pro" ? "bg-[#3B82F6]" : "bg-[#1F2937]"
+                  <motion.button
+                    whileHover={{ scale: 1.05 }}
+                    whileTap={{ scale: 0.97 }}
+                    className={`mt-6 w-full py-2 px-4 rounded-lg text-white font-medium cursor-pointer ${
+                      plan === "pro"
+                        ? "bg-[#3B82F6]"
+                        : "bg-[#1F2937] hover:bg-blue-600"
                     }`}
                   >
-                    Choose Started
-                  </button>
-                </div>
+                    Choose Plan
+                  </motion.button>
+                </motion.div>
               ))}
 
-              {/* One-time plan card */}
-              <div
+              {/* One-time plan */}
+              <motion.div
                 className="bg-gradient-to-b from-[#1F2937] to-[#111827] p-6 rounded-xl text-[#D1D5DB] border border-white/10 flex flex-col justify-between"
-                data-aos="zoom-in"
-                data-aos-delay={600}
-                data-aos-duration="700"
+                initial={{ opacity: 0, y: 40 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.8, duration: 0.6 }}
               >
                 <div>
                   <h3 className="text-xl font-bold">
@@ -244,8 +265,8 @@ const PricingSection = () => {
                 <button className="mt-6 w-full py-2 px-4 rounded-lg bg-[#1F2937] text-[#E5E7EB] font-medium hover:bg-blue-600 cursor-pointer">
                   Get Started
                 </button>
-              </div>
-            </div>
+              </motion.div>
+            </motion.div>
           </TabsContent>
         </Tabs>
       </div>

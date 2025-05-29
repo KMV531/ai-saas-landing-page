@@ -24,7 +24,7 @@ const Header = () => {
             </button>
           </div>
         </div>
-        <div className="hidden max-lg:block cursor-pointer">
+        <div className="block md:hidden cursor-pointer">
           <MenuIcon width={30} height={30} className="text-white" />
         </div>
       </div>
