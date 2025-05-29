@@ -67,7 +67,7 @@ const Footer = () => {
                 },
               },
             ].map(({ title, items, extraItem }, i) => (
-              <div key={title} className="flex flex-col space-y-3">
+              <div key={title} className="flex flex-col space-y-3 w-max">
                 <h1 className="text-white font-semibold text-xl">{title}</h1>
                 {items.map((item) => (
                   <p

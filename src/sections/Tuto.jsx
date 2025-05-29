@@ -7,7 +7,7 @@ const TutoSection = () => {
   return (
     <section className="container mx-auto px-5 lg:px-0 pt-16 md:pt-20">
       {/* Heading */}
-      <div className="flex flex-col items-center justify-center max-w-3xl mx-auto text-center space-y-6">
+      <div className="flex flex-col items-center justify-center max-w-6xl mx-auto text-center space-y-6">
         <h1
           className="text-white font-extralight text-3xl md:text-5xl lg:text-7xl"
           data-aos="fade-up"

@@ -29,7 +29,7 @@ const FAQSection = () => {
       <Accordion
         type="single"
         collapsible
-        className="max-w-6xl mx-auto text-white p-20"
+        className="max-w-6xl mx-auto text-white px-5 py-10 sm:px-10 sm:py-14 md:px-16 md:py-20"
       >
         {[
           {
