@@ -13,7 +13,7 @@
 - **AI-Focused UI**: Designed for technical storytelling
 - **Lightning Fast**: 98 Lighthouse performance score
 - **Scalable Architecture**: Easy feature additions
-- **Dark/Light Mode**: Automatic system detection
+- **Dark Mode**: Automatic system detection
 
 ## 🛠️ Tech Stack
 
